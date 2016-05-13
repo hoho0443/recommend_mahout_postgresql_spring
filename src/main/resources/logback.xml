@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+  <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <Pattern> %msg %-5level %logger{36} .%d{HH:mm:ss.SSS} [%thread]- %n 
+      </Pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.mybatis" level="TRACE" additivity="false">
+      <appender-ref ref="consoleAppender"/>
+  </logger>
+
+  <logger name="java.sql" level="TRACE" additivity="false">
+      <appender-ref ref="consoleAppender"/>
+  </logger>
+
+  <logger name="org.springframework" level="TRACE"    additivity="false">
+      <appender-ref ref="consoleAppender"/>
+  </logger>
+  <root>
+    <level name="TRACE"/>
+    <appender-ref ref="consoleAppender"/>
+  </root>
+</configuration>
